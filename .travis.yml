@@ -13,12 +13,12 @@ env:
   global:
     - NODE_ENV=test
 
-before_script:
-  - psql -c 'create database book_test;' -U postgres
-  - psql -c "CREATE USER jeff WITH PASSWORD null;" -U postgres
-  - npm run build
-  - npm install -g sequelize-cli
-  - sequelize db:migrate
+# before_script:
+#   - psql -c 'create database book_test;' -U postgres
+#   - psql -c "CREATE USER jeff WITH PASSWORD null;" -U postgres
+#   - npm run build
+#   - npm install -g sequelize-cli
+#   - sequelize db:migrate
 script:
   - npm test
 after_success:
